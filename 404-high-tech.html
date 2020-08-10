@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+<head>
+    <link href="./404-High-Tech.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>404 </title>
+</head>
+
+<body>
+    <div id="container-404">
+        <div id="page-not-found-container">
+            <div id="page-not-found">
+                <span class="char1">P</span>
+                <span class="char2">a</span>
+                <span class="char3">g</span>
+                <span class="char4">e</span>
+                <span class="char5">N</span>
+                <span class="char6">o</span>
+                <span class="char7">t</span>
+                <span class="char8">F</span>
+                <span class="char9">o</span>
+                <span class="char10">u</span>
+                <span class="char11">n</span>
+                <span class="char12">d</span>
+            </div>
+        </div>
+
+        <div id="link-container">
+            <div id="no-page-container">
+                <div id="no-page-icon"><i class="fas fa-file-excel"></i><span class="four-oh-four">404</span></div>
+            </div>
+            <div class="circle-right"><i class="fas fa-home"></i></div>
+            <div class="circle-right"><i class="fas fa-address-card"></i></div>
+            <div class="circle-right"><i class="fas fa-code-branch"></i></div>
+            <div class="circle-right"><i class="fas fa-rss"></i></div>
+            <a href="/" target="_top" id="mouseover1" data-icon-number="0"></a>
+            <a href="/about" target="_top" id="mouseover2" data-icon-number="1"></a>
+            <a href="/github" target="_top" id="mouseover3" data-icon-number="2"></a>
+            <a href="/blog" target="_top" id="mouseover4" data-icon-number="3"></a>
+        </div>
+        <div id="go-home" class="heads-up-text" data-text-number="0"><a href="/" target="_top"><span class="slashes">\\</span> HOME</a></div>
+        <div id="go-about" class="heads-up-text" data-text-number="1"><a href="/about" target="_top"><span class="slashes">\\</span> ABOUT</a></div>
+        <div id="go-github" class="heads-up-text" data-text-number="2"><a href="/github" target="_top"><span class="slashes">\\</span> REPOS</a></div>
+        <div id="go-burn" class="heads-up-text" data-text-number="3"><a href="/blog" target="_top"><span class="slashes">\\</span> BLOG</a></div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    var textArray = document.getElementsByClassName('heads-up-text');
+
+    function openDisplayLinks(event) {
+        let eventTarget = event.target.dataset.iconNumber;
+        textArray[eventTarget].setAttribute('style', 'width: 500px; opacity: 1;');
+        for (i = 0; i < textArray.length; i++) {
+            if (i.toString() !== eventTarget) {
+                textArray[i].removeAttribute('style');
+            }
+        }
+    }
+
+    function closeDisplayLinks() {
+        for (i = 0; i < textArray.length; i++) {
+            textArray[i].removeAttribute('style');
+        }
+    }
+
+    document.querySelector('#mouseover1').addEventListener('mouseover', openDisplayLinks);
+    document.querySelector('#mouseover2').addEventListener('mouseover', openDisplayLinks);
+    document.querySelector('#mouseover3').addEventListener('mouseover', openDisplayLinks);
+    document.querySelector('#mouseover4').addEventListener('mouseover', openDisplayLinks);
+
+    window.addEventListener('click', closeDisplayLinks);
+</script>
